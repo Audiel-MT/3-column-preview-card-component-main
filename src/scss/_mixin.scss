@@ -1,0 +1,20 @@
+@use 'variables';
+
+@mixin btn($ct) {
+    display: block;
+    padding: 20px 35px;
+    width: max-content;
+    background-color: gray;
+    border-radius: 50px;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: variables.$transparent-white;
+    color: $ct;
+    border: 1px solid variables.$very-light-gray;
+}
+
+@mixin btnhover ($bg-c, $ct) {
+    background-color: $bg-c;
+    color: $ct;
+}

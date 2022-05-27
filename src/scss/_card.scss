@@ -1,0 +1,83 @@
+@use 'variables';
+@use 'mixin';
+@use 'responsive';
+
+.card {
+    width: 325px;
+    padding: 50px;
+    &:first-child {
+        background-color: variables.$briht-orage;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        @include responsive.mfirst(975px) {
+            flex-basis: 310px;
+            border-top-right-radius: initial;
+            border-bottom-left-radius: 10px;
+        }
+    }
+
+    .img {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .card__title {
+        font-size: 3.5rem;
+        font-family: 'Big Shoulders Display', cursive;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: variables.$very-light-gray;
+        margin-bottom: 40px;
+    }
+
+    .card__paragraph {
+        font-size: 1.5rem;
+        font-family: 'Lexend Deca', sans-serif;
+        font-weight: 400;
+        color: variables.$transparent-white;
+        margin-bottom: 25px;
+        @include responsive.mfirst(975px) {
+            margin-bottom: 85px;
+        }
+    }
+
+    .btn {
+        @include mixin.btn(variables.$briht-orage);
+        &:hover {
+            @include mixin.btnhover(variables.$briht-orage, variables.$very-light-gray);
+        }
+    }
+}
+
+.card:nth-child(2n) {
+    background-color: variables.$dark-cyan;
+    @include responsive.mfirst(975px) {
+        flex-basis: 310px;
+    }
+
+    .btn {
+        @include mixin.btn(variables.$dark-cyan);
+        &:hover {
+            @include mixin.btnhover(variables.$dark-cyan, variables.$very-light-gray);
+        }
+    }
+}
+
+.card:last-child {
+    background-color: variables.$very-dark-cyan;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    @include responsive.mfirst(975px) {
+        flex-basis: 310px;
+        border-bottom-left-radius: initial;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .btn {
+        @include mixin.btn(variables.$very-dark-cyan);
+        &:hover {
+            @include mixin.btnhover(variables.$very-dark-cyan, variables.$very-light-gray);
+        }
+    }
+}
